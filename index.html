@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet meme archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/memes.js" defer></script>
+</head>
+<body class="bg-gray-100 p-5 max-w-7xl mx-auto">
+    <form id="newMeme" class="bg-white p-5 rounded-lg shadow-md mb-5">
+        <fieldset>
+            <legend class="text-xl font-bold mb-4">Add a new meme:</legend>
+            
+            <div class="mb-3">
+                <label for="title" class="block mb-1">Title:</label>
+                <input type="text" name="title" id="title" required class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            
+            <div class="mb-3">
+                <label for="year" class="block mb-1">Year:</label>
+                <input type="number" name="year" id="year" min="1990" max="2025" required class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            
+            <div class="mb-3">
+                <label for="description" class="block mb-1">Description:</label>
+                <textarea name="description" id="description" rows="3" required class="w-full p-2 border border-gray-300 rounded"></textarea>
+            </div>
+            
+            <div class="mb-3">
+                <label for="imageUrl" class="block mb-1">Image URL:</label>
+                <input type="url" name="imageUrl" id="imageUrl" placeholder="https://example.com/image.jpg" required class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            
+            <div class="mb-3">
+                <label for="tags" class="block mb-1">Tags (comma separated):</label>
+                <input type="text" name="tags" id="tags" placeholder="funny, viral, 2020s" class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            
+            <input type="submit" id="addButton" value="Add" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 cursor-pointer mt-2">
+        </fieldset>
+    </form>
+    
+    <div id="outputDiv">
+        <div id="memesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Meme cards will be displayed here -->
+        </div>
+    </div>
+</body>
+</html>
